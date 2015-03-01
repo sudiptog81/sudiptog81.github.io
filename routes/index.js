@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
    email: 'mailto:sudiptog81@outlook.com' ,
    creator: 'Sudipto Ghosh',
    git: '//sudiptog81.github.io/'
+<<<<<<< HEAD
   });
 });
 
@@ -29,6 +30,8 @@ router.get('/rainbow/', function(req, res, next) {
    email: 'mailto:sudiptog81@outlook.com' ,
    creator: 'Sudipto Ghosh',
    git: '//sudiptog81.github.io/'
+=======
+>>>>>>> origin/master
   });
 });
 
