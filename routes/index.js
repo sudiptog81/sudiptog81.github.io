@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
    title: 'Sudipto Ghosh' ,
    email: 'mailto:sudiptog81@outlook.com' ,
    creator: 'Sudipto Ghosh',
-   git: '//cdn.rawgit.com/sudiptog81/sudiptoghosh/master/'
+   git: '//sudiptog81.github.io/'
   });
 });
 
