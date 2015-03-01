@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-in">
+<head>
+  <meta charset="utf-8" />
+  <title><% title %></title>
+  <meta name="description" content="The Website is the personal portfolio of <% creator %>" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="<% git %>stylesheets/style.css" />
+  <link rel="stylesheet"  href="//fonts.googleapis.com/css?family=Lato:100,300,900" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" />
+  <style type="text/css">
+    .fb {color: #3b5998; text-decoration: none;}
+    .tw {color: #3cf; text-decoration: none;}
+    .gp {color: #d34836; text-decoration: none;}
+    .gt {color: #00bf8f; text-decoration: none;}
+    .list{text-align: center;color: #0099CC;text-decoration: none;}
+    h3{text-align: center;color: #0099CC;text-transform: uppercase;}
+    .fname{font-weight:500;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1><span class="fname">Sudipto</span> <span class="lname" >Ghosh</span></h1>
+    <h2><span class="sub">Personal Portfolio</span></h2>
+  </header>
+  <div class="container">
+    <h3>About Me</h3>
+    <p class="about">
+      I am a student in a senior secondary school in New Delhi, the Capital of India. I was born in a small town in West Bengal in 1999
+      and later shifted to New Delhi in 2003. After a decade of living in New Delhi, I have become a quadrilingual, knowing various
+      languages like English, Hindi, Bengali and Sanskrit. Though I am famous in my school, I hate the recognition.  I have won many
+      laurels to myself and my school. I have also been a topper for many years. I aim on becoming a cardiologist in future.
+    </p>
+    <h3>Exams</h3>
+    <table>
+      <tr>
+	<td>10th March 2015</td>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Science&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      </tr>
+ <tr>
+	<td>12th March 2015</td>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hindi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      </tr>
+  <tr>
+	<td>16th March 2015</td>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mathematics&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      </tr>
+   <tr>
+	<td>18th March 2015</td>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;English&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      </tr>
+   <tr>
+	<td>21st March 2015</td>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Social Science&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      </tr>
+    </table>
+    <h3>My Works</h3>
+    <p class="list">
+      <a class="list" href="//sudiptog81.blogspot.in/">My Blog</a><br />
+      <a class="list" href="clock/">Clock using Raphael.js</a><br />
+      <a class="list" href="rainbow/">Rainbow using D3.js</a>
+    </p>
+    <h3 >Social Media</h3>
+    <p>
+      <a class="fb" href="//www.facebook.com/sudiptoghosh99"><span class="fa fa-2x fa-facebook-square" ></span></a>
+      <a class="tw" href="//www.twitter.com/sudiptoghosh99"><span class="fa fa-2x fa-twitter-square"></span></a>
+      <a class="gp"  href="//plus.google.com/+SudiptoGhosh"><span class="fa fa-2x fa-google-plus-square"></span></a>
+      <a class="gt"  href="//github.com/sudiptog81"><span class="fa fa-2x fa-github-square"></span></a>
+    </p>
+  </div>
+  <footer>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <p>&copy; <a class="copy" href="<% email %>"><% creator %>. 2015.</a></p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </footer>
+  </body>
+</html>
