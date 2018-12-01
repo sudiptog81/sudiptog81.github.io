@@ -7,7 +7,7 @@ I am a high schoolgraduate fiddling with life. I made this website in my spare t
 
 ### Miscellaneous
 
-This project was mainly created using vanilla JS, HTML5, and CSS3. I made use of FontAwesome](https://fontawesome.com) icons and images from [Unsplash](https://unsplash.com/) and custom CSS for styling this thing.
+This project was mainly created using vanilla JS, HTML5, and CSS3. I made use of [FontAwesome](https://fontawesome.com) icons and images from [Unsplash](https://unsplash.com/) and custom CSS for styling this thing.
 
 Any links to external libraries used in the project are subject to their copyright.
 
