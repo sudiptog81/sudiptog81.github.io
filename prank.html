@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>YoHo</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+            * {
+                font-family: 'Montserrat', sans-serif;
+                text-transform: uppercase
+            }
+
+            body {
+                background: #222;
+                color: #fff;
+                text-align: center;
+                padding: 50px
+            }
+
+            #btn {
+                padding: 10px;
+                background: #222;
+                border: 2px solid #fff;
+                font-size: 2em;
+                font-weight: 800;
+                color: #fff;
+            }
+        </style>
+    </head>
+
+    <body>
+        <button id="btn">Hi</button>
+        <div id="container"></div>
+    </body>
+
+    <script>
+        const btn = document.getElementById('btn');
+        const container = document.getElementById('container');
+        btn.onclick = () => {
+            setTimeout(() => {
+                navigator.vibrate('1000');
+                container.innerHTML = "<p>Your phone is now under my control!</p>";
+            }, 1000);
+
+            var options = {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+            };
+
+            function success(pos) {
+                var crd = pos.coords;
+
+                container.innerHTML += '<p>Your current position is:</p>';
+                container.innerHTML += `<p>Latitude : ${crd.latitude}`;
+                container.innerHTML += `<p>Longitude: ${crd.longitude}`;
+                container.innerHTML += `<p>More or less ${crd.accuracy} meters.`;
+            }
+
+            function error(err) {
+                alert(`ERROR(${err.code}): ${err.message}`);
+            }
+
+            setTimeout(() => {
+                navigator.vibrate('1000');
+                container.innerHTML += "<p>Seriously!</p>";
+                setTimeout(() => {
+                    navigator.geolocation.getCurrentPosition(success, error, options);
+                }, 2000);
+            }, 3000);
+        }
+    </script>
+
+</html>

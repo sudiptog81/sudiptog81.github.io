@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <!-- Metadata -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="theme-color" content="#000000" />
+        <title>Sudipto Ghosh</title>
+        <link rel="shortcut icon" href="https://sudipto-ghosh.firebaseapp.com/assets/img/sgpp.png" type="image/x-icon">
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+            crossorigin="anonymous">
+        <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/solid.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/brands.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/regular.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/fontawesome.css">-->
+
+        <!-- If Offline
+	<link rel="stylesheet" href="assets/css/solid.css">
+    	<link rel="stylesheet" href="assets/css/brands.css">
+    	<link rel="stylesheet" href="assets/css/fontawesome.min.css"> 
+    	-->
+
+        <link rel="stylesheet" href="./assets/css/main.css">
+        <style>
+            /* Loader */
+#loader {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    display: table;
+    transition: .5s;
+}
+
+
+#loader-wrapper {
+    margin: auto auto;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.sk-folding-cube {
+    margin: auto;
+    margin-top: -5px;
+    /* padding-top: 50%; */
+    width: 50px;
+    height: 50px;
+    position: relative;
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+}
+
+.sk-folding-cube .sk-cube {
+    float: left;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.sk-folding-cube .sk-cube:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+    animation: sk-foldCubeAngle 2.4s infinite linear both;
+    -webkit-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+}
+
+.sk-folding-cube .sk-cube2 {
+    -webkit-transform: scale(1.1) rotateZ(90deg);
+    transform: scale(1.1) rotateZ(90deg);
+}
+
+.sk-folding-cube .sk-cube3 {
+    -webkit-transform: scale(1.1) rotateZ(180deg);
+    transform: scale(1.1) rotateZ(180deg);
+}
+
+.sk-folding-cube .sk-cube4 {
+    -webkit-transform: scale(1.1) rotateZ(270deg);
+    transform: scale(1.1) rotateZ(270deg);
+}
+
+.sk-folding-cube .sk-cube2:before {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+
+.sk-folding-cube .sk-cube3:before {
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+}
+
+.sk-folding-cube .sk-cube4:before {
+    -webkit-animation-delay: 0.9s;
+    animation-delay: 0.9s;
+}
+
+@-webkit-keyframes sk-foldCubeAngle {
+
+    0%,
+    10% {
+        -webkit-transform: perspective(140px) rotateX(-180deg);
+        transform: perspective(140px) rotateX(-180deg);
+        opacity: 0;
+    }
+
+    25%,
+    75% {
+        -webkit-transform: perspective(140px) rotateX(0deg);
+        transform: perspective(140px) rotateX(0deg);
+        opacity: 1;
+    }
+
+    90%,
+    100% {
+        -webkit-transform: perspective(140px) rotateY(180deg);
+        transform: perspective(140px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+@keyframes sk-foldCubeAngle {
+
+    0%,
+    10% {
+        -webkit-transform: perspective(140px) rotateX(-180deg);
+        transform: perspective(140px) rotateX(-180deg);
+        opacity: 0;
+    }
+
+    25%,
+    75% {
+        -webkit-transform: perspective(140px) rotateX(0deg);
+        transform: perspective(140px) rotateX(0deg);
+        opacity: 1;
+    }
+
+    90%,
+    100% {
+        -webkit-transform: perspective(140px) rotateY(180deg);
+        transform: perspective(140px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+	</style>
+    </head>
+
+    <body>
+        <!-- Header -->
+        <header id="header">
+
+            <!-- Navigation -->
+
+            <!-- Navigation Bar Desktop/Laptop/Landscape -->
+            <nav class="navbar">
+                <span class="hamburger" onclick="openSidebar()">
+                    <a href="#" class="scroll">
+                        <i class="fas fa-bars fa-2x"></i>
+                    </a>
+                </span>
+                <ul class="navbar-nav">
+                    <li><span class="logo" id="logo"><img alt="SGhosh Logo" src="https://sudipto-ghosh.firebaseapp.com/assets/img/logo-wide.png"></span></li>
+                    <li><a class="scroll first" href="#contact" onclick="openModal()">Contact</a></li>
+                    <li><a class="scroll" href="#achievements">Achievements</a></li>
+                    <li><a class="scroll" href="#projects">Projects</a></li>
+                    <li><a class="scroll" href="#experience">Experience</a></li>
+                    <li><a class="scroll" href="#education">Education</a></li>
+                </ul>
+            </nav>
+
+            <!-- Navigation Bar Mobile/Small Screens -->
+            <aside id="side-menu">
+                <a class="btn-close-sidebar" id="btn-close-sidebar" href="#" onclick="closeSidebar()">&times;</a>
+                <a href="#" class="scroll" onclick="closeSidebar()">Home</a>
+                <a href="#education" class="scroll" onclick="closeSidebar()">Education</a>
+                <a href="#experience" class="scroll" onclick="closeSidebar()">Experience</a>
+                <a href="#projects" class="scroll" onclick="closeSidebar()">Projects</a>
+                <a href="#achievements" class="scroll" onclick="closeSidebar()">Achievements</a>
+                <a href="#contact" class="scroll" onclick="closeSidebar(), openModal()">Contact </a>
+            </aside>
+        </header>
+
+        <div id="loader">
+            <div id="loader-wrapper">
+                <div class="sk-folding-cube">
+                    <div class="sk-cube1 sk-cube"></div>
+                    <div class="sk-cube2 sk-cube"></div>
+                    <div class="sk-cube4 sk-cube"></div>
+                    <div class="sk-cube3 sk-cube"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main id="main">
+            <div class="header-intro">
+                <div class="intro-text">
+                    <div class="bordered animate">
+                        <img src="https://sudipto-ghosh.firebaseapp.com/assets/img/sgpp.png" alt="sudipto ghosh photograph"
+                            class="img-circle">
+                        <h1>Sudipto Ghosh</h1>
+                        <div class="social" id="payment">
+                            <a href="https://www.facebook.com/sudiptoghosh99" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://twitter.com/ScientificGhosh" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/sudipto_ghosh.99/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/SudiptoGhosh" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a href="https://github.com/sudiptog81/" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/sudiptoghosh99/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="section section-dark" id="contact">
+                <div class="shouttext">
+                    <h2 class="support">Support me via&nbsp;
+                        <a href="https://paypal.me/ghoshpro/usd" target="_blank"><strong class="currency">$ USD</strong>
+                            <!--<i class="fab fa-paypal"></i>--></a>&nbsp;&nbsp;OR&nbsp;
+                        <!--<span class="spacebar">&nbsp;|&nbsp;</span>
+                        <a href="#payment"><i onclick="openpayModal()" class="far fa-credit-card"></i></a>
+			<span class="spacebar">&nbsp;|&nbsp;</span>-->
+                        <a href="https://www.payumoney.com/paybypayumoney/#/CF89D3EA5231BF1111B550187175033D" class="pm-button"><strong
+                                class="currency">₹ INR</strong>
+                            <!--<i onclick="openpayModal()" class="fas fa-rupee-sign"></i>--></a>
+                        <!--<span class="spacebar">&nbsp;|</span>
+                        <a href="#payment"><i onclick="openpayModal()" class="fab fa-cc-mastercard"></i></a>-->
+                    </h2>
+                </div>
+            </section>
+            <div class="heading2" id="education">
+                <div class="heading-text">
+                    <h2 class="bordered animate">Education</h2>
+                </div>
+            </div>
+            <section class="section section-light">
+                <div class="content-grid">
+                    <div class="edu-grid">
+                        <div class="lang-0"><button class="lang img-small-circle"><i class="fas fa-language"></i></button></div>
+                        <div class="lang-grid">
+                            <div class="lang-wrapper">
+                                <div class="lang-a"><span class="lang-title">Russian</span><br><span class="lang-level">Beginner</span></div>
+                                <div class="lang-b"><span class="lang-title">English</span><br><span class="lang-level">Native</span></div>
+                                <div class="lang-c"><span class="lang-title">Bangla</span><br><span class="lang-level">Native</span></div>
+                                <div class="lang-d"><span class="lang-title">Hindi</span><br><span class="lang-level">Native</span></div>
+                            </div>
+                        </div>
+                        <div class="item-a"><button class="school img-small-circle"><i class="fas fa-school"></i></button></div>
+                        <div class="item-a-name tooltip"><span class="school-title help">Balvantray Mehta Vidya Bhawan
+                                ASMA</span><span class="tooltiptext-dark bmvb">Greater Kailash II, New Delhi, India</span><br>
+                            <span class="school-batch">Class of 2018 - Science</span>
+                            <br><span class="school-subs">Majored in Physics, Chemistry, Mathematics &amp;
+                                Biology</span></div>
+                    </div>
+                </div>
+            </section>
+            <div class="heading3" id="experience">
+                <div class="heading-text">
+                    <h2 class="bordered animate">Experience</h2>
+                </div>
+            </div>
+            <section class="section section-dark">
+                <div class="content">
+                    <div class="xp-grid">
+                        <div class="xp-1"><button class="img-small-circle-dark"><i class="fas fa-code xp"></i></button></div>
+                        <div class="xp-1-desc">
+                            <h2 class="xp-title">Web Designing</h2><span class="xp-desc">5
+                                yrs of industry xp</span>
+                        </div>
+                        <div class="xp-2"><button class="img-small-circle-dark"><i class="fas fa-gavel xp"></i></button></div>
+                        <div class="xp-2-desc">
+                            <h2 class="xp-title">Model UN</h2><span class="xp-desc">Chaired
+                                UNEP at BMVB MUN '18</span>
+                        </div>
+                        <div class="xp-3"><button class="img-small-circle-dark"><i class="fas fa-chart-pie xp"></i></button></div>
+                        <div class="xp-3-desc tooltip">
+                            <h2 class="xp-title help">Info Designing</h2><span class="tooltiptext">Information
+                                Designing</span><span class="xp-desc">3
+                                yrs of working xp</span>
+                        </div>
+                        <div class="xp-4 team"><button class="img-small-circle-dark"><img alt="leader-icon" src="https://sudipto-ghosh.firebaseapp.com/assets/img/leader.png"></button></div>
+                        <div class="xp-4-desc">
+                            <h2 class="xp-title">Team-working</h2><span class="xp-desc">3 yrs of leadership xp</span>
+                        </div>
+                        <div class="xp-5"><button class="img-small-circle-dark"><img alt="podium-icon" src="https://sudipto-ghosh.firebaseapp.com/assets/img/podium.png"></button></div>
+                        <div class="xp-5-desc">
+                            <h2 class="xp-title">Public Speaking</h2><span class="xp-desc">7
+                                yrs of practical xp</span>
+                        </div>
+                        <div class="xp-6"><button class="img-small-circle-dark"><i class="fas fa-pen-fancy xp"></i></button></div>
+                        <div class="xp-6-desc">
+                            <h2 class="xp-title">Academic Writing</h2><span class="xp-desc">8
+                                yrs of practical xp</span>
+                        </div>
+                        <div class="xp-7"><button class="img-small-circle-dark"><i class="fas fa-book-reader xp"></i></button></div>
+                        <div class="xp-7-desc tooltip">
+                            <h2 class="xp-title help">High School PCMB</h2><span class="tooltiptext pcmb">Physics,
+                                Chemistry, Mathematics &amp; Biology</span><span class="xp-desc">2 + 1
+                                yrs of learning xp</span>
+                        </div>
+                        <div class="xp-8"><button class="img-small-circle-dark"><i class="fas fa-music xp"></i></button></div>
+                        <div class="xp-8-desc">
+                            <h2 class="xp-title">Keyboard &amp; Guitar</h2><span class="xp-desc">2
+                                yrs of hands on xp</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="heading4" id="projects">
+                <div class="heading-text">
+                    <h2 class="bordered animate">Projects</h2>
+                </div>
+            </div>
+            <section class="section section-light">
+
+                <div class="content">
+                    <div class="proj-grid">
+                        <div class="proj-1">
+                            <div class="proj-wrapper">
+                                <div class="proj-icon">
+                                    <a href="https://bit.ly/2DZ5ojs" target="_blank"><button class="img-small-circle"><i
+                                                class="fas fa-broadcast-tower"></i></button></a>
+                                </div>
+                                <div class="proj-title">
+                                    <h3>Radio Waves<br>Transmission &amp; Reception</h3>
+                                </div>
+                                <div class="proj-time">
+                                    Nov '14 - Nov' 16
+                                </div>
+                                <div class="proj-desc">
+                                    This project demonstrated the principles of radio transmission using AM and FM
+                                    technologies for INSPIRE Exhibition.
+                                    Subsequently, the FM section is being used to broadcast online lectures and the
+                                    school is planning to start its own FM
+                                    station. This model won the INSPIRE SLEPC and had been selected for
+                                    INSPIRE NLEPC.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-2">
+                            <div class="proj-wrapper">
+                                <div class="proj-icon">
+                                    <a target="_blank" href="https://www.instructables.com/id/Yoga-Mat/"><button class="img-small-circle"><i
+                                                class="fab fa-medapps"></i></button></a>
+                                </div>
+                                <div class="proj-title">
+                                    <h3 class="yoga">Smart<br>Yoga Mat</h3>
+                                </div>
+                                <div class="proj-time">
+                                    Sep '15 – Sep '16
+                                </div>
+                                <div class="proj-desc">
+                                    The objective of the project was to generate electricity when a
+                                    person walks, runs, jumps, exercises or
+                                    does yoga on a special surface which has piezoelectric crystals embedded inside it
+                                    and then store the same. This project won the Zonal Level Science Exhibition of
+                                    Directorate of Education, Govt of National Capital Territory of Delhi.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-3">
+                            <div class="proj-wrapper">
+                                <div class="proj-icon">
+                                    <a href="https://www.googlesciencefair.com/projects/en/2014/e9ca3dde92e7a4fc6fe7ca85176bc66576841791fa2a59bb1640c32f50fbcc37"
+                                        target="_blank"><button class="img-small-circle"><i class="fas fa-leaf"></i></button></a>
+                                </div>
+                                <div class="proj-title">
+                                    <h3>Food Crisis<br>Causes &amp; Effects</h3>
+                                </div>
+                                <div class="proj-time">
+                                    Apr '14 - Aug '14
+                                </div>
+                                <div class="proj-desc">
+                                    This was a Google Science Fair Project in the Food Security category. The flawed
+                                    Public Distribution System for agricultural projects urged me to research and find
+                                    out more about the present conditions and possible consequences if the system
+                                    remained flawed. Statistical estimations were calculated &amp; conclusions derived.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-4">
+                            <div class="proj-wrapper">
+                                <div class="proj-icon">
+                                    <button class="img-small-circle"><i class="fas fa-users"></i></button>
+                                </div>
+                                <div class="proj-title">
+                                    <h3>Nerd FM<br>Community Radio</h3>
+                                </div>
+                                <div class="proj-time">
+                                    Jul '18 - ?
+                                </div>
+                                <div class="proj-desc">
+                                    Currently testing and deploying a community radio station 'Nerd FM' in my
+                                    neighbourhood. Used low-cost and easy-to-source components which were put together
+                                    to build a custom hardware. Used open-source software to relay educational content
+                                    and broadcast the same. I can help anyone willing to build a similar setup.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-5">
+                            <div class="proj-wrapper">
+                                <div class="proj-icon">
+                                    <button class="img-small-circle"><i class="fas fa-fist-raised"></i></button>
+                                </div>
+                                <div class="proj-title">
+                                    <h3>Saving Child<br>Labourers</h3>
+                                </div>
+                                <div class="proj-time">
+                                    Sep '15 - Feb '16
+                                </div>
+                                <div class="proj-desc">
+                                    Identified child labourers in the neighbouring communities and one such individual
+                                    was granted educational and financial help from the school authorities. It was
+                                    undertaken as the social project of the Interact Club of BMVB ASMA, when I was the
+                                    President of the Club. The Club also undertook various other projects related to
+                                    social action.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-6">
+                            <div class="proj-wrapper">
+                                <div class="proj-icon">
+                                    <a target="_blank" href="https://www.bmvbmun.org/"><button class="img-small-circle mun"><img
+                                                alt="bmvbmun-icon" src="https://sudipto-ghosh.firebaseapp.com/assets/img/mun.png"></button></a>
+                                </div>
+                                <div class="proj-title">
+                                    <h3>Outreach Program<br>for BMVB MUN '18</h3>
+                                </div>
+                                <div class="proj-time">
+                                    Aug '18 - Oct '18
+                                </div>
+                                <div class="proj-desc">
+                                    Undertaken the designing, development and management of the official website and
+                                    social media pages of the Inaugural BMVB Model United Nations Conference. Authored
+                                    the Background Guide for the UNEP Committee. Presided over the International Press
+                                    as the Head of the IP team.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="heading5" id="achievements">
+                <div class="heading-text">
+                    <h2 class="bordered animate">Achievements</h2>
+                </div>
+            </div>
+            <section class="section section-dark last-section">
+
+                <div class="content">
+                    <div class="xp-grid">
+                        <div class="xp-1"><button class="img-small-circle-dark">
+                                <img alt="inspire-icon" src="https://sudipto-ghosh.firebaseapp.com/assets/img/inspire.png"></button></div>
+                        <div class="xp-1-desc tooltip">
+                            <h2 class="xp-title help">5th Inspire NLEPC</h2><span class="tooltiptext nlepc">National
+                                Level Exhibition and Project Competition</span><span class="xp-desc">Participated in
+                                Nationals</span>
+                        </div>
+                        <div class="xp-2"><button class="img-small-circle-dark"><img alt="spellbee-icon" src="https://sudipto-ghosh.firebaseapp.com/assets/img/bee.png"></button></div>
+                        <div class="xp-2-desc">
+                            <h2 class="xp-title">SpellBee India</h2><span class="xp-desc">Cityfinalist '13,
+                                Semifinalist '15</span>
+                        </div>
+                        <div class="xp-3 ac-3"><button class="img-small-circle-dark"><img alt="testdome-icon" src="https://sudipto-ghosh.firebaseapp.com/assets/img/testdome.png"></button></div>
+                        <div class="xp-3-desc">
+                            <h2 class="xp-title"><i class="fab fa-html5 fa-sm"></i> + <i class="fab fa-css3-alt fa-sm"></i>
+                                Certificate</h2><span class="xp-desc"><a href="https://www.testdome.com/cert/33021210a2f847a080ddf1944c9011b9"
+                                    target="_blank">View
+                                    Certification</a></span>
+                        </div>
+                        <div class="xp-4 ac-4"><button class="img-small-circle-dark"><img alt="unsw-icon" src="https://sudipto-ghosh.firebaseapp.com/assets/img/unsw.png"></button></div>
+                        <div class="xp-4-desc tooltip">
+                            <h2 class="xp-title help">UNSW IAIS CS</h2><span class="tooltiptext iais">Int'l Assessments
+                                for Indian Schools (CS)</span><span class="xp-desc">State Topper '09 -'11</span>
+                        </div>
+                        <div class="xp-5 ac-5"><button class="img-small-circle-dark"><img alt="bitsd-icon" src="https://sudipto-ghosh.firebaseapp.com/assets/img/bits.png"></button></div>
+                        <div class="xp-5-desc tooltip">
+                            <h2 class="xp-title help">BITS Dubai PBISE</h2><span class="tooltiptext pbise">BITS-Phyzok
+                                Pre-Board
+                                Int'l Scholarship Exam</span><span class="xp-desc">Student Merit Award '18</span>
+                        </div>
+                        <div class="xp-6 ac-6"><button class="img-small-circle-dark"><img alt="teri-icon" src="https://sudipto-ghosh.firebaseapp.com/assets/img/teri.png"></button></div>
+                        <div class="xp-6-desc">
+                            <h2 class="xp-title">GREEN Olympiad</h2><span class="xp-desc">Certificate of Merit '15</span>
+                        </div>
+
+                        <div class="xp-7 ac-7"><button class="img-small-circle-dark"><img alt="nif-icon" src="https://sudipto-ghosh.firebaseapp.com/assets/img/nif.png"></button></div>
+                        <div class="xp-7-desc tooltip">
+                            <h2 class="xp-title help">IGNITE Awards</h2><span class="tooltiptext apj">Dr APJ Abdul
+                                Kalam IGNITE Awards</span><span class="xp-desc">Projects
+                                accepted '16, '17</span>
+                        </div>
+
+                        <div class="xp-8 ac-8"><button class="img-small-circle-dark"><img alt="bvp-icon" src="https://sudipto-ghosh.firebaseapp.com/assets/img/bvp.png"></button></div>
+                        <div class="xp-8-desc">
+                            <h2 class="xp-title ac-8">गुरु वंदन छात्र अभिनंदन</h2><span class="xp-desc">
+                                छात्र अभिनंदन पुरस्कार '18</span>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <div class="back-to-top" id="back-to-top">
+                <a href="#" class="scroll">
+                    <i class="animate fas fa-arrow-circle-up fa-2x"></i>
+                </a>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="footer">
+                &copy; Sudipto Ghosh 2018
+            </div>
+        </footer>
+
+        <!--  Modal -->
+        <div id="contact-modal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close"><i class="fas fa-window-close fa-sm"></i></span>
+
+                <div class="contact-form-container">
+
+                    <h2 class="contact-heading">Contact Me</h2>
+
+                    <form action="contact.php" method="POST" class="contact-form">
+                        <p class="name-p">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" name="name" id="name" required="required">
+                        </p>
+                        <p class="email-p">
+                            <label for="email" class="form-label">E-Mail</label>
+                            <input type="email" name="email" id="email" required="required">
+                        </p>
+                        <p class="message-p">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea name="message" id="message" rows="5" required="required"></textarea>
+                        </p>
+                        <p class="submit-p">
+                            <button class="btn-submit" type="submit">Send Message</button>
+                        </p>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <!--  Modal -->
+        <div id="payment-modal" class="modal">
+
+            <!-- Modal content -->
+            <div class="payment-modal-content">
+                <span class="close" onclick="closepayModal()"><i class="fas fa-window-close fa-sm"></i></span>
+
+                <div class="payment-form-container">
+
+                    <h2 class="payment-heading">Payment Details</h2>
+
+                    <form action="form_process.php" target="_blank" method="POST" class="payu-form">
+                        <p class="name-p">
+                            <label for="name" class="form-label">Amount (INR)</label>
+                            <input type="text" name="amount" id="payu-amount" required="required">
+                            <script>
+                                function addtax() {
+                                        var giveninput= document.getElementById('payu-amount').value;
+                                        var amountgiven = parseFloat(giveninput);
+                                        var amountgst = (0.18*0.02*amountgiven);
+                                        var amountpluspayu = (1.02*amountgiven);
+                                        var amountfinal = amountpluspayu + amountgst ;
+                                        document.getElementById('payu-amount').value =
+                                        amountfinal;
+                                    }
+                            </script>
+                        </p>
+                        <p class="name-p">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" name="firstname" id="payu-name" required="required">
+                        </p>
+                        <p class="email-p">
+                            <label for="email" class="form-label">E-Mail</label>
+                            <input type="email" name="email" id="payu-email" required="required">
+                        </p>
+                        <p class="phone-p">
+                            <label for="email" class="form-label">Phone No</label>
+                            <input type="tel" name="phone" id="payu-phone" required="required">
+                        </p>
+                        <p class="message-p">
+                            <!--<label for="message" class="form-label">Message (Optional)</label>
+                            <textarea name="message" id="payu-message" rows="5"></textarea>-->
+                            <label hidden for="productinfo" class="form-label">NOTE: 18% GST + 2% PG Fees Added
+                                Automatically</label>
+                            <input type="text" name="surl" id="payu-surl" value="https://sudipto.ghosh.pro/success.php"
+                                hidden>
+                            <input type="text" name="furl" id="payu-furl" value="https://sudipto.ghosh.pro/failure.php"
+                                hidden>
+                            <input type="text" name="productinfo" id="payu-product" value="donation" hidden>
+                        </p>
+                        <p class="submit-p">
+                            <button class="btn-submit" type="submit">Pay Now</button>
+                        </p>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- Scripts -->
+        <script>
+            window.onload = () => {
+                document.getElementById('loader').style.display = 'none';
+            };
+            var submitButton = document.querySelector('.btn-submit');
+            submitButton.onclick = function () {
+                submitButton.innerHTML = "<i class='fas fa-pulse fa-cog'></i>";
+            }
+        </script>
+        <script src="https://sudipto-ghosh.firebaseapp.com/assets/js/scroll.js"></script>
+        <script src="./assets/js/main.js"></script>
+    </body>
+
+</html>
