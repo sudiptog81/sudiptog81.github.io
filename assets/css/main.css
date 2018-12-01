@@ -4,6 +4,7 @@
 
 /* Fonts */
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 /* Animations */
 .animate {
     -webkit-animation: fade .5s;
