@@ -1,17 +1,15 @@
-# [Sudipto Ghosh](http://sudiptoghosh.ml)
+# [Sudipto Ghosh](https://sudipto.ghosh.pro)
 ### This repository contains the stactic files for my website
-
-![Screenshot](Screenshot.png)
 
 ### Introduction
 
-I am a student in a senior secondary school in New Delhi, the Capital of India. I was born in a small town in West Bengal in 1999 and later shifted to New Delhi in 2003. After a decade of living in New Delhi, I have become a quadrilingual, knowing various languages like English, Hindi, Bengali and Sanskrit. Though I am famous in my school, I hate the recognition. I have won many laurels to myself and my school. I have also been a topper for many years. I aim on becoming a cardiologist in future. 
+I am a high schoolgraduate fiddling with life. I made this website in my spare time in hope to build a web presence :)
 
 ### Miscellaneous
 
-This project was mainly created using [NodeJs](http://nodejs.org). Any links to the software used in the project are subject to their copyright.
+This project was mainly created using vanilla JS, HTML5, and CSS3. I made use of FontAwesome](https://fontawesome.com) icons and images from [Unsplash](https://unsplash.com/) and custom CSS for styling this thing.
 
-Some parts use the [AngularJs](http://angularjs.org), [RaphaelJs](http://raphaeljs.com/), and [D3.js](http://d3js.org) libraries too.
+Any links to external libraries used in the project are subject to their copyright.
 
 ### Clone The Repo
 
@@ -22,23 +20,7 @@ $ cd sudipto
 $ git clone https://github.com/sudiptog81/sudiptoghosh.git
 ```
 
-Run the server by entering the following commands:
-```
-$ cd sudipto
-$ npm install
-$ node bin/www
-```
-
-You can make a Windows service for starting the server at every boot:
-```
-$ npm install qckwinsvc --global
-$ qckwinsvc
-	> Enter name for service: nodejs
-	> Enter description: sudipto
-	> Enter path: (path/to/sudipto)/bin/www
-```
-
-This is to inform all the users who are viewing this that the files in the repository are specific to www.sudiptoghosh.ml only.
+This is to inform all the users who are viewing this that the files in the repository are specific to sudipto.ghosh.pro only.
 They are subject to change without any prior notice.
 ***
 (C) Sudipto Ghosh
