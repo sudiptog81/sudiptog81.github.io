@@ -1,5 +1,5 @@
 # [Sudipto Ghosh](https://sudipto.ghosh.pro)
-### This repository contains the stactic files for my website
+### This repository contains the static files for my website
 
 ### Introduction
 
